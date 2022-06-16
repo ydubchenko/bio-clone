@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: Sample Component
+  description: This is a sample component
+  tags:
+    - sample
+    - api
+spec:
+  type: openapi
+  lifecycle: dev
+  owner: grp_-_platform_experience_team

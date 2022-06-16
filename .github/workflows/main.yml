@@ -1,0 +1,23 @@
+name: Test worflow
+
+on: [push]
+
+env:
+  DAY_OF_WEEK: Monday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: artifact
+          path: .
+      - name: "Say Hello Mona it's Monday"
+        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Mona
+      
